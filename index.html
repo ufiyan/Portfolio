@@ -106,7 +106,7 @@
             display: flex;
             align-items: center;
             text-align: center;
-            background: #000000;
+            background: linear-gradient(135deg, #18181b 0%, #232526 100%);
             position: relative;
             overflow: hidden;
         }
@@ -119,10 +119,11 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.18) 0%, transparent 50%);
             animation: float 6s ease-in-out infinite;
+            z-index: 1;
         }
 
         @keyframes float {
@@ -140,14 +141,16 @@
             font-size: 4.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            color: #ffffff;
+            color: #fff;
+            text-shadow: 0 4px 32px rgba(0,0,0,0.7), 0 1px 0 #764ba2;
             animation: fadeInUp 1s ease;
         }
 
         .hero-content p {
             font-size: 1.4rem;
             margin-bottom: 3rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: #e0e0e0;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.5);
             animation: fadeInUp 1s ease 0.2s both;
             font-weight: 400;
             letter-spacing: 0.5px;
@@ -215,22 +218,25 @@
         /* Sections */
         section {
             padding: 6rem 0;
-            background: #fafafa;
+            background: #18181b; /* dark background */
             position: relative;
         }
 
         section:nth-child(even) {
-            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            background: #232526; /* slightly lighter dark for contrast */
         }
 
+        /* Make all section headings white and shiny */
         h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 3rem;
             text-align: center;
             margin-bottom: 4rem;
-            color: #1a1a2e;
+            color: #fff;
             font-weight: 700;
             position: relative;
+            text-shadow: 0 4px 32px rgba(102,126,234,0.4), 0 1px 0 #764ba2;
+            letter-spacing: 1px;
         }
 
         h2::after {
@@ -243,6 +249,7 @@
             height: 4px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 2px;
+            box-shadow: 0 0 16px #764ba2, 0 0 8px #667eea;
         }
 
         /* About Section */
@@ -842,27 +849,6 @@
                 
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-handshake fa-3x"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Chicago Lobbyist Database App</h3>
-                        <p>N-tier designed console-based database application in Python for managing Chicago lobbyist registration information. Features comprehensive data management and query capabilities.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">N-Tier Architecture</span>
-                            <span class="tech-tag">Database Management</span>
-                            <span class="tech-tag">Data Processing</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <a href="https://github.com/ufiyan/Chicago-lobbyist-Database-App" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
                         <i class="fas fa-parking fa-3x"></i>
                     </div>
                     <div class="project-content">
@@ -876,6 +862,41 @@
                         </div>
                         <div style="margin-top: 1rem;">
                             <a href="https://github.com/ufiyan/Intelligent-Parking-Guidance-System" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-robot fa-3x"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Powered CRM Stale Lead Re-Engagement Platform</h3>
+                        <p>
+                            Developed a full-stack web application that automates personalized email follow-ups for stale CRM leads using generative AI. The system identifies leads with no recent engagement, generates tailored email drafts, and updates both a live dashboard and an Airtable CRM backend.
+                            <br><br>
+                            <strong>Key Features:</strong>
+                            <ul style="text-align:left; margin: 1rem 0 0 1rem;">
+                                <li>Public contact form with Airtable integration via FastAPI backend</li>
+                                <li>Admin dashboard for real-time CRM lead tracking and engagement metrics</li>
+                                <li>AI email generation using Google Gemini API</li>
+                                <li>Batch processing and data export to JSON</li>
+                                <li>Two-way Airtable sync for live CRM updates</li>
+                            </ul>
+                            <strong>Tech Stack:</strong> React, Tailwind CSS, FastAPI, Python, Airtable, Google Gemini API, GitHub
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Airtable</span>
+                            <span class="tech-tag">Google Gemini API</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://github.com/ufiyan/ai-stale-lead-re-engagement" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">
                                 <i class="fab fa-github"></i> View on GitHub
                             </a>
                         </div>
